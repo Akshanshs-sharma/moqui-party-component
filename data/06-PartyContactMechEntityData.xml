@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml>
+
+    <party.entity.PartyContactMech
+            partyId="1"
+            contactMechId="a1"
+            fromDate="2026-01-01T10:10:10"
+            thruDate="2027-01-01T10:20:10"/>
+
+</entity-facade-xml>

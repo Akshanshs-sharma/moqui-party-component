@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-facade-xml>
+
+    <party.entity.PartyGroup
+            partyId="2"
+            groupName="Celestial"
+            description="An ecommerce brand"/>
+
+</entity-facade-xml>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<entity-facade-xml>
+    <party.entity.ContactMech contactMechId="a1" contactMechTypeId="EMAIL"
+                              infoString="Information about contact"
+                              createdDate="2026-01-01T10:30:00" />
+
+    <party.entity.ContactMech contactMechId="a2"
+                              contactMechTypeId="TELECOM_NUMBER"
+                              infoString="information about contact 2"
+                              createdDate="2026-01-01T10:45:00" />
+
+</entity-facade-xml>

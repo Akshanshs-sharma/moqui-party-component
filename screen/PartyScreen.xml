@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+    require-authentication="anonymous-all"  >
+
+    <transition name="createParty" >
+        <service-call name="create#party.entity.Party" />
+        <default-response url="." />
+    </transition>
+<actions>
+    <entity-find entity-name="party.entity.Party" list="partyList" >
+    </entity-find>
+    <entity-find entity-name="party.entity.Person" list="personList" >
+
+    </entity-find>
+</actions>
+    <widgets>
+
+        <container-dialog id="createPartyDialogue" button-text="Create Party !!" >
+            <form-single name="CreatePartyFrom" transition="createParty" >
+                <auto-fields-entity entity-name="party.entity.Party" field-type="edit" include="all" />
+                <field name="submitButton" >
+                    <default-field title="create">
+                        <submit/>
+                    </default-field>
+                </field>
+            </form-single>
+        </container-dialog>
+        <label type="h1" text="Party Table "/>
+
+        <form-list name="PartyTable" list="partyList" skip-form="true" >
+            <auto-fields-entity entity-name="party.entity.Party" field-type="display" />
+        </form-list>
+        <label type="h1" text=" Person Table "/>
+        <form-list name="PersonTable" list="personList" skip-form="true" >
+            <auto-fields-entity entity-name="party.entity.Person" field-type="display" />
+
+        </form-list>
+
+
+    </widgets>
+</screen>

@@ -9,10 +9,10 @@
         <field name="fromDate" type="date-time" is-pk="true"/>
         <field name="thruDate" type="date-time" />
 
-        <relationship type="one" title="Party" related="Party">
+        <relationship type="many" title="Party" related="Party">
             <key-map field-name="partyId" />
         </relationship>
-        <relationship type="one" title="ContactMech" related="ContactMech" >
+        <relationship type="many" title="ContactMech" related="ContactMech" >
             <key-map field-name="contactMechId" />
         </relationship>
     </entity>

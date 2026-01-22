@@ -1,5 +1,11 @@
 
 
+import org.moqui.context.ExecutionContext
+
+ExecutionContext ec = context.ec
+
+// Validate input
+
 if( !partyId || !firstName || !lastName)
 {
     (
@@ -8,31 +14,21 @@ if( !partyId || !firstName || !lastName)
     return
 }
 
-def party = ec.entity.find("Party")
-                      .condition("partyId",partyId)
-                        .one()
+// Check if  Party exists
 
-if(!party)
-{
-     ec.message.addError(" Valid Party Id required : NO such party exists")
+def partyExist = ec.entity.find("Party")
+        .condition("partyId", partyId)
+
+
+if (!partyExist) {
+    ec.message.addError("Party not found with partyId: ${partyId}")
     return
 }
-Map<String, Object> personFields = [
-        partyId  : partyId,
-        firstName: firstName,
-        lastName : lastName
-]
 
-context.each { String key, Object value ->
-    if (!personFields.containsKey(key)) {
-        personFields.put(key, value)
-    }
-}
+// Create Person
 
-def personValue = ec.entity.makeValue("Person")
-.setAll(personFields)
-.create()
+def personData = ec.entity.makeValue("Person")
+personData.setAll(context)
+personData.create()
 
-responseMessage= "Person : ${firstName} ${lastName} created successfully"
-
-
+responseMessage = "Person ${firstName} ${lastName} created successfully"

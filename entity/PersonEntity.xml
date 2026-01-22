@@ -8,7 +8,7 @@
         <field name="partyId" type="id" is-pk="true"  />
         <field name="firstName" type="text-short" />
         <field name="lastName" type="text-short" />
-        <field name="dataOfBirth" type="date" not-null="false" />
+        <field name="dateOfBirth" type="date"  />
 
         <relationship type="one" title="Party" related="Party">
             <key-map field-name="partyId"/>

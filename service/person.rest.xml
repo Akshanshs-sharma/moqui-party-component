@@ -12,7 +12,7 @@
             </method>
 
             <method type="post">
-                <service name="person.PersonServices.create#PersonG" />
+                <service name="person.PersonServices.create#Person" />
             </method>
         </resource>
 

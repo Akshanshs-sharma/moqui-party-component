@@ -20,10 +20,11 @@
         <container-dialog id="createPartyDialogue" button-text="Create Party !!" >
             <form-single name="CreatePartyFrom" transition="createParty" >
                 <auto-fields-entity entity-name="party.entity.Party" field-type="edit" include="all" />
-                <field name="submitButton" >
+                <field name="submitButton"  >
                     <default-field title="create">
                         <submit/>
                     </default-field>
+
                 </field>
             </form-single>
         </container-dialog>
@@ -35,7 +36,10 @@
         <label type="h1" text=" Person Table "/>
         <form-list name="PersonTable" list="personList" skip-form="true" >
             <auto-fields-entity entity-name="party.entity.Person" field-type="display" />
-
+<!--            <field name="lastName" hide="true">-->
+<!--                <header-field show-order-by="true"><text-find  hide-options="true"/></header-field>-->
+<!--                <default-field><display/></default-field>-->
+<!--            </field>-->
         </form-list>
 
 
